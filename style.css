@@ -149,7 +149,7 @@ body{
 
 /*home page*/
 #hero{
-    background-image: url("/images/homepage.jpg");
+    background-image: url("images/homepage.jpg");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -912,9 +912,10 @@ input[type="email"]{
         font-size: 32px;
     }
     .text {
-        right: 0;
+        right: 5px;
         left: 60px;
-        top: 60px;
+        top: 10px;
+        padding: 30px;
     }
     #hero {
         background-position: 55%;
