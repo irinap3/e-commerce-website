@@ -1,0 +1,50 @@
+{
+    "prod1":{
+        "category": "Home/Costum",
+        "name" : "Costum elegant",
+        "price": "549 RON",
+        "description": "Descoperă rafinamentul și eleganța fără compromisuri cu costumul de damă de la PureLines. Acest costum premium este creat pentru femeia modernă care apreciază atât stilul, cât și confortul, perfect pentru evenimentele importante sau întâlnirile de afaceri unde impresia contează.",
+        "images": [
+            "images/shopPage/prod1.jpeg",
+            "images/shopPage/prod1.1.jpg",
+            "images/shopPage/prod1.2.jpg",
+            "images/shopPage/prod1.3.jpg"
+        ]
+    },
+    "prod2":{
+        "category": "Home/Jeans",
+        "name" : "Jeans cu perle",
+        "price": "189 RON",
+        "description": "Descoperă rafinamentul atemporal cu colecția noastră de jeansi eleganți, realizată cu meticulozitate pentru a îmbina stilul și confortul. Jeansi noștri îmbină materiale premium cu croială deosebită, asigurând o potrivire flatantă ce accentuează fiecare siluetă. ",
+        "images": [
+            "images/shopPage/prod3.jpeg",
+            "images/shopPage/prod3.jpeg",
+            "images/shopPage/prod3.jpeg",
+            "images/shopPage/prod3.jpeg"
+        ]
+    },
+    "prod3":{
+        "category": "Home/Pantaloni",
+        "name" : "Pantaloni eleganti din satin",
+        "price": "179 RON",
+        "description": "Confectionați dintr-un material fin și lucios, acești pantaloni aduc un plus de eleganță oricărei ținute. Cu o croială impecabilă care îmbină lejeritatea cu un fit modern, acești pantaloni sunt perfecți pentru serile în care vrei să impresionezi sau pentru momentele în care confortul și stilul trebuie să coexiste.",
+        "images": [
+            "images/shopPage/prod4.jpeg",
+            "images/shopPage/prod4.jpeg",
+            "images/shopPage/prod4.jpeg",
+            "images/shopPage/prod4.jpeg"
+        ]
+    },
+    "prod9":{
+        "category": "Home/Tops",
+        "name" : "Top elegant cu volane",
+        "price": "119 RON",
+        "description": "Descoperă eleganța desăvârșită cu topul nostru din mătase, o piesă ce îmbină rafinamentul clasic cu un design modern și feminin. Confecționat din mătase de cea mai înaltă calitate, acest top oferă o senzație de delicatețe și confort pe piele, fiind perfect pentru ocazii speciale sau pentru a adăuga un strop de lux în ținutele tale de zi cu zi.",
+        "images": [
+            "images/shopPage/prod11.jpeg",
+            "images/shopPage/prod11.jpeg",
+            "images/shopPage/prod11.jpeg",
+            "images/shopPage/prod11.jpeg"
+        ]
+    }
+}

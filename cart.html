@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel = "stylesheet" href = "style.css"> 
+</head>
+<body>
+
+    <section id = "header" >
+        <a href ="index.html"><img src="/images/logo.png" class="logo" alt=""></a>
+        <div>
+            <ul id = "navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div style="position: relative;" >
+                <li id="lg-bag" style="display: inline;">
+                    <a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <span class="cart-count" id="cart-count">0</span>
+                </li>
+                </div>
+                <a href="#" id="close"><i class="fa-solid fa-square-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            <i id="bar" class="fas fa-outdent"></i> 
+        </div>
+    </section>
+
+    <section id = "page-header" class="cart-header"> 
+        <div class="about-text-cotainer">
+            <h2>#ItsAboutTrust</h2>
+            <p>Doar câțiva pași te mai despart de a avea o garderobă de invidiat!</p>
+        </div>
+    </section>
+
+    <div class="sliding-text">
+        <p>Transport gratuit la comenzi de peste 150 RON!</p>
+    </div>
+
+
+    <section id="cart" class="section-p1">
+        <div id="cart-state" style="display: none;">
+            Coșul dumneavoastră este gol.
+        </div>
+        <table width="100%" id="cart-table" style="display: none;">
+            <thead>
+                <tr>
+                    <td>Produs</td>
+                    <td>Cantitate</td>
+                    <td>Pret</td>
+                    <td>Subtotal</td>
+                    <td>Actiune</td>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <div class="cart-total">
+            <strong>Total: RON <span id="cart-total">0.00</span></strong>
+        </div>
+    </section>
+
+    <h4 id="finalizare" style="display: none;">FINALIZARE COMANDĂ</h4>
+    
+    <section id="customer-details" style="display: none;">
+        <div class="container" style="display: 100%;">
+            <div class="formular-comanda">
+                <div class="div" >
+                <p style="color: white;">AI DEJA CONT?</p>
+                <a href="#" style="color: white;">AUTENTIFICARE</a>
+                </div>
+                <p> COMANDA FARA CONT </p>
+                <form action="" id="order-form">
+                    <div class="col">
+                    <input type="radio" id="persoana-fizica" name="statut" value="persoana-fizica" required>
+                    <label for="persoana-fizica">Persoana fizica</label>
+                    <input type="radio" id="persoana-juridica" name="statut" value="persoana-juridica" required>
+                    <label for="persoana-juridica">Persoana juridica</label>
+                    <br><br>
+                    <label for="email">Adresa de e-mail</label> <br>
+                    <input type="email" id="e-mail" name="e-mail" required><br><br>
+                    <label for="prenume">Prenume</label> <br>
+                    <input type="text" id="prenume" name="prenume" required><br><br>
+                    <label for="nume">Nume</label> <br>
+                    <input type="text" id="nume" name="nume" required><br><br>
+                    <label for="telefon">Telefon</label> <br>
+                    <input type="text" id="telefon" value="0727530876" required><br><br>
+                    <label for="judet">Judet</label> <br>
+                        <select id="judet" name="judet" required>
+                            <option value="">Selectează un județ</option>
+                            <option value="Alba">Alba</option>
+                            <option value="Arad">Arad</option>
+                            <option value="Argeș">Argeș</option>
+                            <option value="Bacău">Bacău</option>
+                            <option value="Bihor">Bihor</option>
+                            <option value="Bistrița-Năsăud">Bistrița-Năsăud</option>
+                            <option value="Botoșani">Botoșani</option>
+                            <option value="Brașov">Brașov</option>
+                            <option value="Brăila">Brăila</option>
+                            <option value="Buzău">Buzău</option>
+                            <option value="Caraș-Severin">Caraș-Severin</option> 
+                                 <!--s.a.m.d-->
+                        </select> <br> <br>
+                    <label for="localitate">Localitate</label> <br>
+                    <input type="text" id="localitate" name="localitate" required> <br> <br>
+                    <label for="adresa">Adresa</label> <br>
+                    <input type="text" id="adresa" name="adresa" required> <br> <br>
+                </div>
+                    <div class="col">
+                        <div class="metoda-plata">
+                            <div class="titlu">METODA DE PLATA</div> <br>
+                            <input type="radio" id="ramburs" name="plata" value="ramburs" required>
+                            <label for="plata">Plata la livrare (Ramburs)</label> <br><br>
+                            <input type="radio" id="online" name="plata" value="online" required>
+                            <label for="plata">Plata online</label>
+                        </div>
+                        <div class="metoda-livrare">
+                            <div class="titlu">MODALITATE DE LIVRARE</div><br>
+                            <input type="radio" id="livrare" name="livrare" value="livrare" checked>
+                            <label for="plata">Pret special 15 lei Cargus</label> <br><br>
+                        </div>
+                        <input type="checkbox" id="termeni" name="termeni" value="termeni" required>
+                        <label for="termeni">Sunt de acord cu termenii si conditiile.</label><br>
+                    </div>
+                    <a><button type="submit" id="checkout-button" class="col" style="display: none;" >Trimite comanda</button></a>
+</section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="images/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adresa:</strong> Strada 9 Mai, nr.512, Brașov </p>
+            <p><strong>Ore:</strong> 10:00 - 18:00, Luni-Vineri </p>
+            <div class="follow">
+                <h4>Urmărește-ne</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>Despre</h4>
+            <a href="#">Despre noi</a>
+            <a href="#">Informații despre livrare</a>
+            <a href="#">Politica de confidențialitate</a>
+            <a href="#">Termeni și condiții</a>
+            <a href="#">Contactează-ne</a>
+        </div>
+
+        <div class="col">
+            <h4>Contul Meu</h4>
+            <a href="#">Înregistează-te</a>
+            <a href="#">Vezi coșul</a>
+            <a href="#">Lista de favorite</a>
+            <a href="#">Urmărește comanda</a>
+            <a href="#">Ajutor</a>
+        </div>
+
+        <div class="col install">
+            <h4>Instalează aplicația</h4>
+            <p>De pe App Store sau Google Play</p>
+            <div class="row">
+                <img src="images/app-store-badge.png" alt="">
+                <img src="images/images.png" alt="">
+            </div>
+            <p>Plată securizată</p>
+            <img src="images/pay.jpg" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2024, Irina Popa - PureLines Online Shop</p>
+        </div>
+    </footer>
+
+<script src = "script.js"></script>
+<script src = "cart.js"></script>
+</body>
+</html>
