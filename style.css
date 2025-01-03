@@ -792,6 +792,57 @@ input[type="email"]{
 .div a{
     text-decoration: none;
 }
+ 
+#inregistrare {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20px;
+}
+#inregistrare .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+#inregistrare h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+#inregistrare .signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#inregistrare .form-group {
+    margin-bottom: 15px;
+}
+
+#inregistrare label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#inregistrare input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#inregistrare input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#inregistrare input::placeholder {
+    color: #aaa;
+}
 
 /*start media query*/
 @media (max-width:899px) {
