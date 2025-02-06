@@ -1,26 +1,35 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['utilizator_id'])) {
+    header("Location: login.html"); // Redirect to login page if not logged in
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce website project</title>
+    <title>Comandă Trimisa</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel = "stylesheet" href = "style.css"> 
 </head>
 <body>
-
-    <section id = "header" >
+<section id = "header" >
         <a href ="index.html"><img src="images/logo.png" class="logo" alt=""></a>
         <div>
             <ul id = "navbar">
-                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="index.html">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <div style="position: relative;" >
                 <li id="lg-bag" style="display: inline;">
-                    <a class="active" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
                     <span class="cart-count" id="cart-count">0</span>
                 </li>
                 </div>
@@ -33,18 +42,14 @@
         </div>
     </section>
 
-    <section id="comanda">
-        <h4>Comanda dumneavoastră a fost înregistrată!</h4>
-        <p>Vă mulțumim pentru că ați ales produsele noastre!
-           Comanda dumneavoastră va fi procesată și veți fi înștiințat prin e-mail care este statusul comenzii. </p>
-        <div class="detalii-comanda">
-            <h3>Detaliile comenzii</h3>
-            <div id="nume-el"></div>
-            <div id="prenume-el"></div>
-            <div id="adresa-el"></div>
-            <div id="total-el"></div>
-        </div>
-    </section>
+    <main style="text-align: center; margin-top: 50px;">
+        <h1>Comanda a fost trimisă cu succes!</h1>
+        <p>Vă mulțumim pentru achiziția dumneavoastră. Verificați emailul pentru detaliile comenzii.</p>
+        <br>
+        <a href="logout.php"><button>Logout</button></a>
+        <a href="index.html"><button>Back to Home</button></a>
+    </main>
+
     <footer class="section-p1">
         <div class="col">
             <img class="logo" src="images/logo.png" alt="">
@@ -94,46 +99,5 @@
             <p>© 2024, Irina Popa - PureLines Online Shop</p>
         </div>
     </footer>
-
-    <script src = "script.js"></script>
-    <script src = "cart.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    let numeEl = document.getElementById('nume-el');
-    let prenumeEl = document.getElementById('prenume-el');
-    let adresaEl = document.getElementById('adresa-el');
-    let totalEl = document.getElementById('total-el');
-
-    let nume = localStorage.getItem('nume');
-    let prenume = localStorage.getItem('prenume');
-    let adresa = localStorage.getItem('adresa');
-    let total = localStorage.getItem('total');
-    let judet = localStorage.getItem('judet');
-    let localitate = localStorage.getItem('localitate');
-
-    numeEl.textContent = "Nume: " + nume;
-    prenumeEl.textContent = "Prenume: " + prenume;
-    adresaEl.textContent = "Adresa: " + judet + " , " + localitate + " , " + adresa ;
-    if(total!=0){
-        totalEl.textContent = "Total de plata: " + total + " RON";
-    } else{
-        totalEl.textContent = "Total de plata: 0.00 RON";
-    }
-
-    if(total){
-        total = Number(total);
-        if(total<149){
-            total += 15;
-        }
-        totalEl.textContent = "Total de plata: " + total + " RON";
-    } else {
-        totalEl.textContent = "Total de plata: " + total + " RON";
-    }
-
-    localStorage.clear();
-    cart = [];
-});
-    </script>
-
 </body>
 </html>

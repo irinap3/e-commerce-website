@@ -42,6 +42,7 @@ function adaugaProdus(){
     }
 
     const product = {
+        id: parseInt(productElement.dataset.productId),
         name: document.getElementById('product-name').innerText,
         size: size,
         price: parseFloat(document.getElementById('product-price').innerText),
@@ -65,28 +66,31 @@ function adaugaProdus(){
 }
 
 function loadCartItems(){
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-    let total = 0;
+    fetch('get_cart.php')
+    .then(response => response.json())
+    .then(cart => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
 
-    cart.forEach(product => {
-        const subtotal = product.price * product.quantity;
-        total  = total + subtotal;
-        localStorage.setItem('total', total);
+        cart.forEach(product => {
+            const subtotal = product.price * product.quantity;
+            total += subtotal;
 
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${product.name} (Marime: ${product.size})</td>
-            <td>${product.quantity}</td>
-            <td>${product.price.toFixed(2)} RON </td>
-            <td>${subtotal.toFixed(2)} RON </td>
-            <td><button onclick="stergeProdus('${product.name}', '${product.size}')">Sterge</button></td>
-        `
-        cartItemsContainer.append(row);
-    })
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${product.name} (Marime: ${product.size})</td>
+                <td>${product.quantity}</td>
+                <td>${product.price.toFixed(2)} RON</td>
+                <td>${subtotal.toFixed(2)} RON</td>
+                <td><button onclick="stergeProdus('${product.name}', '${product.size}')">Sterge</button></td>
+            `;
+            cartItemsContainer.append(row);
+        });
 
-    document.getElementById('cart-total').innerText = total.toFixed(2);
+        document.getElementById('cart-total').innerText = total.toFixed(2);
+    });
 }
 
 function stergeProdus(name,size){
@@ -101,24 +105,4 @@ function stergeProdus(name,size){
 document.addEventListener('DOMContentLoaded', function() {
     updateCartDisplay();
     loadCartItems();
-});
-
-let orderForm = document.getElementById("order-form");
-orderForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let nume = document.getElementById('nume').value;
-    let prenume = document.getElementById('prenume').value;
-    let adresa = document.getElementById('adresa').value;
-    let judet = document.getElementById('judet').value;
-    let localitate = document.getElementById('localitate').value;
-
-
-    localStorage.setItem('nume', nume);
-    localStorage.setItem('prenume', prenume);
-    localStorage.setItem('adresa', adresa);
-    localStorage.setItem('judet', judet);
-    localStorage.setItem('localitate', localitate);
-
-    window.location.href = "order.html";
-});
+})

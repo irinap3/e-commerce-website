@@ -1,5 +1,6 @@
 {
     "prod1":{
+        "id": 1,
         "category": "Home/Costum",
         "name" : "Costum elegant",
         "price": "549 RON",
@@ -12,6 +13,7 @@
         ]
     },
     "prod2":{
+        "id": 2,
         "category": "Home/Jeans",
         "name" : "Jeans cu perle",
         "price": "189 RON",
@@ -24,6 +26,7 @@
         ]
     },
     "prod3":{
+        "id": 3,
         "category": "Home/Pantaloni",
         "name" : "Pantaloni eleganti din satin",
         "price": "179 RON",
@@ -35,7 +38,73 @@
             "images/shopPage/prod4.jpeg"
         ]
     },
+    "prod4":{
+        "id": 4,
+        "category": "Home/Rochie",
+        "name" : "Rochie mini din satin",
+        "price": "149 RON",
+        "description": "Cu un design modern și o croială care îți accentuează silueta, rochia combină materialul de satin, fin și strălucitor, cu detalii subtile pentru un look sofisticat.",
+        "images": [
+            "images/shopPage/prod5.jpeg",
+            "images/shopPage/prod5.jpeg",
+            "images/shopPage/prod5.jpeg",
+            "images/shopPage/prod5.jpeg"
+        ]
+    },
+    "prod5":{
+        "id": 5,
+        "category": "Home/Rochie midi",
+        "name" : "Rochie lungă pentru vară",
+        "price": "179 RON",
+        "description": "Fii regina verii cu această rochie lungă, creată pentru zilele însorite și serile relaxante. Cu un design fluid și un material respirabil, această rochie este piesa perfectă pentru a îmbina confortul cu stilul.",
+        "images": [
+            "images/shopPage/prod6.jpeg",
+            "images/shopPage/prod6.jpeg",
+            "images/shopPage/prod6.jpeg",
+            "images/shopPage/prod6.jpeg"
+        ]
+    },
+    "prod6":{
+        "id": 6,
+        "category": "Home/Pantalogi evazați",
+        "name" : "Pantaloni eleganți evazați",
+        "price": "199 RON",
+        "description": "Croiala evazată alungește silueta, oferind un look sofisticat și rafinat, ideal pentru orice ocazie specială sau ținută office-chic.",
+        "images": [
+            "images/shopPage/prod7.jpeg",
+            "images/shopPage/prod7.jpeg",
+            "images/shopPage/prod7.jpeg",
+            "images/shopPage/prod7.jpeg"
+        ]
+    },
+    "prod7":{
+        "id": 7,
+        "category": "Home/Costum",
+        "name" : "Costum negru - Pantaloni și sacou",
+        "price": "349 RON",
+        "description": "Îmbracă-te în eleganță pură cu acest costum negru sofisticat, ce combină perfect un design clasic cu un croi modern. Ideal pentru ocazii formale sau întâlniri de afaceri, acest costum îți va sublinia stilul impecabil și rafinamentul.",
+        "images": [
+            "images/shopPage/prod9.jpeg",
+            "images/shopPage/prod9.jpeg",
+            "images/shopPage/prod9.jpeg",
+            "images/shopPage/prod9.jpeg"
+        ]
+    },
+    "prod8":{
+        "id": 8,
+        "category": "Home/Costum",
+        "name" : "Costum elegant - Pantaloni, vestă și sacou",
+        "price": "749 RON",
+        "description": "Ideal pentru ocazii formale sau evenimente speciale, acest set îmbină perfect confortul cu un look sofisticat, subliniind feminitatea într-o manieră elegantă și rafinată.",
+        "images": [
+            "images/shopPage/prod10.jpeg",
+            "images/shopPage/prod10.jpeg",
+            "images/shopPage/prod10.jpeg",
+            "images/shopPage/prod10.jpeg"
+        ]
+    },
     "prod9":{
+        "id": 9,
         "category": "Home/Tops",
         "name" : "Top elegant cu volane",
         "price": "119 RON",
@@ -45,6 +114,45 @@
             "images/shopPage/prod11.jpeg",
             "images/shopPage/prod11.jpeg",
             "images/shopPage/prod11.jpeg"
+        ]
+    },
+    "prod10":{
+        "id": 10,
+        "category": "Home/Rochie mini",
+        "name" : "Rochie mini tip corset",
+        "price": "279 RON",
+        "description": "Croiala ajustată și designul inspirat din corset accentuează formele, în timp ce materialele fine adaugă un plus de eleganță.",
+        "images": [
+            "images/shopPage/prod12.jpeg",
+            "images/shopPage/prod12.jpeg",
+            "images/shopPage/prod12.jpeg",
+            "images/shopPage/prod12.jpeg"
+        ]
+    },
+    "prod11":{
+        "id": 11,
+        "category": "Home/Tops",
+        "name" : "Top de vară",
+        "price": "79 RON",
+        "description": "Perfect pentru zilele însorite, acest top aduce un aer romantic și feminin, combinând confortul cu un design delicat și rafinat.",
+        "images": [
+            "images/shopPage/prod13.jpeg",
+            "images/shopPage/prod13.jpeg",
+            "images/shopPage/prod13.jpeg",
+            "images/shopPage/prod13.jpeg"
+        ]
+    },
+    "prod12":{
+        "id": 12,
+        "category": "Home/Tops",
+        "name" : "Top alb cu volane",
+        "price": "129 RON",
+        "description": "Adaugă o notă de romantism și stil garderobei tale cu acest top alb cu volane, perfect pentru zilele calde de vară.",
+        "images": [
+            "images/shopPage/prod14.jpeg",
+            "images/shopPage/prod14.jpeg",
+            "images/shopPage/prod14.jpeg",
+            "images/shopPage/prod14.jpeg"
         ]
     }
 }

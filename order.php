@@ -1,16 +1,27 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['utilizator_id'])) {
+    header("Location: login.html"); // Redirect to login page if not logged in
+    exit();
+}
+
+// Retrieve cart data from the session
+$cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce website project</title>
+    <title>Order</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel = "stylesheet" href = "style.css">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <section id = "header" >
+<section id = "header" >
         <a href ="index.html"><img src="images/logo.png" class="logo" alt=""></a>
         <div>
             <ul id = "navbar">
@@ -33,42 +44,68 @@
             <i id="bar" class="fas fa-outdent"></i> 
         </div>
     </section>
+    <br><br>
+    <h1 style ="margin-top: 20px" >Bine ai venit, <?php echo htmlspecialchars($_SESSION['nume']); ?>!</h1><br>
+
+    <h2>Cosul tau</h2>
+    <br><br>
+    <?php if (!empty($cartItems)): ?>
+        <table border="1">
+            <tr>
+                <th>Produs</th>
+                <th>Mărime</th>
+                <th>Cantitate</th>
+                <th>Pret</th>
+                <th>Subtotal</th>
+            </tr>
+            <?php
+            $total = 0;
+            foreach ($cartItems as $item): 
+                $subtotal = $item['quantity'] * $item['price'];
+                $total += $subtotal;
+            ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item['name']); ?></td>
+                    <td><?php echo htmlspecialchars($item['size']); ?></td>
+                    <td><?php echo htmlspecialchars($item['quantity']); ?></td>
+                    <td><?php echo number_format($item['price'], 2); ?></td>
+                    <td><?php echo number_format($subtotal, 2); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <br><br>
+        <h3>Total: <?php echo number_format($total, 2); ?></h3>
+    <?php else: ?>
+        <p>Your cart is empty.</p>
+    <?php endif; ?>
+
+    <br> <br>
+    <h2 style="text-align:center">Detaliile comenzii</h2>
     <section id = "inregistrare">
-        <div class="container">
-            <h2>Creare Cont</h2>
-            <form action="submit.php" method="POST" class="signup-form">
-                <div class="form-group">
-                    <label for="name">Nume</label>
-                    <input type="text" id="name" name="name" placeholder="">
-                    <br><br>
-                    <label for="name">Prenume</label>
-                    <input type="text" id="name" name="prenume" placeholder="">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="">
-                </div>
-    
-                <div class="form-group">
-                    <label for="phone">Numar de Telefon</label>
-                    <input type="tel" id="phone" name="phone" placeholder="">
-                </div>
-    
-                <div class="form-group">
-                    <label for="password">Parola</label>
-                    <input type="password" id="password" name="password" placeholder="Introduceti parola">
-                </div>
-    
-                <div class="form-group">
-                    <label for="confirm-password">Confirma Parola</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirma parola">
-                </div>
-                <button type="submit" class="btn-submit">Creeaza Cont</button>
-            </form>
-                <br><br>
-                <h3>Deja ai un cont?</h3>
-                <a href="login.html"><button>Autentificare</button></a>
+    <div class="container">
+    <form action="submit_order.php" method="POST">
+        <label for="address">Adresa:</label><br>
+        <input type="text" id="address" name="address" required><br>
+
+        <br><br>
+        <label for="payment">Metoda de plata:</label><br><br>
+        <select id="payment" name="payment" required>
+            <option value="credit_card">Card de credit</option>
+            <option value="paypal">PayPal</option>
+            <option value="cash_on_delivery">Ramburs</option>
+        </select><br>
+
+        <br><br>
+        <label for="delivery">Metoda de livrare:</label><br><br>
+        <select id="delivery" name="delivery" required>
+            <option value="standard">Standard (FAN Courier)</option>
+            <option value="express">Pickup Point</option>
+        </select><br>
+
+        <input type="hidden" name="total" value="<?php echo number_format($total, 2); ?>">
+
+        <button type="submit">Trimite comanda!</button>
+    </form>
     </div>
     </section>
     <footer class="section-p1">
@@ -120,11 +157,6 @@
             <p>© 2024, Irina Popa - PureLines Online Shop</p>
         </div>
     </footer>
-    <script>
-        // Funcția pentru a arăta formularul de autentificare când utilizatorul dă click pe buton
-        function showLoginForm() {
-            document.getElementById("login-form").style.display = "block"; // Afișează formularul de login
-        }
-        </script>
-<script src = "script.js"></script>    
-<script src = "cart.js"></script> 
+    <script src = "cart.js"></script> 
+</body>
+</html>
